@@ -3,11 +3,13 @@
     <nav-bar class="home-nav">
       <div slot="center">V商场</div>
     </nav-bar>
+
     <home-swiper :banners="banners"></home-swiper>
     <home-btn1 :recommends="recommends"></home-btn1>
-    <home-btn2></home-btn2>
+    <bzlx></bzlx>
     <tab :tabArr="['流行','新款','精选']" class="home-tab" @tabActive="tabActive"></tab>
     <home-list :tabType="tabType"></home-list>
+
   </div>
 </template>
 
@@ -16,9 +18,9 @@ import NavBar from "components/common/navbar/NavBar";
 
 import HomeSwiper from "components/content/home/HomeSwiper";
 import HomeBtn1 from "components/content/home/HomeBtn1";
-import HomeBtn2 from "components/content/home/HomeBtn2";
 import Tab from "components/content/tab/Tab";
 import HomeList from "components/content/home/HomeList";
+import Bzlx from '@/components/content/home/Bzlx'
 
 import { getHomeMultidata, getHomeListData } from "network/home";
 
@@ -28,10 +30,9 @@ export default {
     NavBar,
     HomeSwiper,
     HomeBtn1,
-    HomeBtn2,
+    Bzlx,
     Tab,
-    HomeList
-    // HomeListItem
+    HomeList,
   },
   data() {
     return {
