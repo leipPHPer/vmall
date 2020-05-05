@@ -3,7 +3,7 @@
     <van-row type="flex" justify="center" class="t">
       <span >本周流行</span>
     </van-row>
-    <van-row gutter="20">
+    <van-row>
       <van-col span="6">
         <div class="box">
           <img src="~assets/img/home/1.webp" alt="">
