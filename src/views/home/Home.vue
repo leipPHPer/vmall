@@ -1,38 +1,41 @@
 <template>
   <div id="home">
-    <nav-bar class="home-nav">
-      <div slot="center">V商场</div>
-    </nav-bar>
+    <van-nav-bar title class="bar">
+      <template #title>
+        <p class="nav-title">分类</p>
+      </template>
+    </van-nav-bar>
 
     <home-swiper :banners="banners"></home-swiper>
     <home-btn1 :recommends="recommends"></home-btn1>
     <bzlx></bzlx>
     <tab :tabArr="['流行','新款','精选']" class="home-tab" @tabActive="tabActive"></tab>
     <home-list :tabType="tabType"></home-list>
-
   </div>
 </template>
 
 <script>
-import NavBar from "components/common/navbar/NavBar";
+// import NavBar from "components/common/navbar/NavBar";
 
 import HomeSwiper from "components/content/home/HomeSwiper";
 import HomeBtn1 from "components/content/home/HomeBtn1";
 import Tab from "components/content/tab/Tab";
 import HomeList from "components/content/home/HomeList";
-import Bzlx from '@/components/content/home/Bzlx'
+import Bzlx from "@/components/content/home/Bzlx";
 
 import { getHomeMultidata, getHomeListData } from "network/home";
+
+import { NavBar } from "vant";
 
 export default {
   name: "Home",
   components: {
-    NavBar,
+    [NavBar.name]: NavBar,
     HomeSwiper,
     HomeBtn1,
     Bzlx,
     Tab,
-    HomeList,
+    HomeList
   },
   data() {
     return {
@@ -75,14 +78,15 @@ export default {
 #home {
   padding: 44px 0 49px 0;
 }
-.home-nav {
+.bar {
   background: var(--color-tint);
-  color: #fff;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9;
+}
+.nav-title {
+  color: #fff;
 }
 .home-tab {
   position: sticky;

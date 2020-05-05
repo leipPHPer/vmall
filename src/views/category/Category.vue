@@ -1,6 +1,10 @@
 <template>
   <div>
-    <van-nav-bar title="分类" class="bar" color="#fff"></van-nav-bar>
+    <van-nav-bar title="" class="bar">
+      <template #title>
+        <p class="nav-title">分类</p>
+      </template>
+    </van-nav-bar>
     <div class="left">
       <van-sidebar v-model="activeKey" @change="onChange">
         <van-sidebar-item title="上衣" />
@@ -76,7 +80,7 @@ export default {
 .bar {
   background: var(--color-tint);
 }
-.van-nav-bar__title {
+.nav-title {
   color: #fff;
 }
 .left {
